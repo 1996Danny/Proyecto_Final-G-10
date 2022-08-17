@@ -25,6 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Application definition
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_REDIRECT_URL = reverse_lazy('home')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -34,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.usuarios',
     'apps.noticias',
+    'apps.somos',
 ]
 
 MIDDLEWARE = [

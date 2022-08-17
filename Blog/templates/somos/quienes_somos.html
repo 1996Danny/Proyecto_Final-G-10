@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+	
+	<br>
+
+	<h1>¿Quienes somos?</h1>
+	<br>
+
+	{% for n in notis %}
+		<h2>{{ n.titulo }}</h2>
+
+		<p>Acerca de : {{ n.cuerpo }}</p>
+
+		{% if n.imagen %}
+			<img src="{{ n.imagen.url }}" width="100px" height="100px">
+		{% else %}
+			<p>NO TIENE IMAGEN </p>
+		{% endif %}
+
+	{% endfor %}
+	
+
+{% endblock contenido %}
